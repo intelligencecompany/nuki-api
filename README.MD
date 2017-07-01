@@ -2,6 +2,8 @@
 
 This package can be used with the NUKI Smartlock Web Api - https://api.nuki.io
 
+npm install nuki-api
+
 ## Code Example
 ``` js
 var nuki = require('nuki-api')
