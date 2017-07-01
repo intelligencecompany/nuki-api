@@ -1,0 +1,15 @@
+{
+  "name": "nuki-api",
+  "version": "0.0.7",
+  "description": "NUKI WEB API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gijs",
+  "license": "MIT",
+  "keywords": ["nuki", "api", "smartlock", "intelligence company"],
+  "dependencies": {
+    "request":">=2.81.0"
+  }
+}
