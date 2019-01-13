@@ -411,9 +411,9 @@ var e = module.exports = {
 
     getLog: function (smartlockId = null) {
         return new Promise(function (resolve, reject) {
-            var url = "https://api.nuki.io/smartlock/log/";
+            var url = "https://api.nuki.io/smartlock/log";
             if(smartlockId != null)
-                url += smartlockId;
+                url += '/'+smartlockId;
 
             var options = {
                 url: url,
