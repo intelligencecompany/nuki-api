@@ -408,7 +408,6 @@ var e = module.exports = {
             request(options, callback);
         });
     },
-
     getLog: function (smartlockId = null) {
         return new Promise(function (resolve, reject) {
             var url = "https://api.nuki.io/smartlock/log";
@@ -434,7 +433,32 @@ var e = module.exports = {
             
             request(options, callback);
         });
-    }
+    },
+        setLock: function (smartlockId, action) {
+            return new Promise(function (resolve, reject) {
+                var url = "https://api.nuki.io/smartlock/" + smartlockId + "/action";
+
+                var options = {
+                    url: url,
+                    method: "POST",
+                    headers: {
+                        'User-Agent': 'none',
+                        'Accept': 'application/json',
+                        'Authorization': 'Bearer ' + self.apiKey
+                    },
+					body: '{"action": ' + action + '}'
+                };
+                function callback(error, response, body) {
+                    if(response.statusCode == 204) {
+                        return resolve(true);
+                    } else {
+                        return reject(new Error(response.statusMessage));
+                    }
+                };
+                
+                request(options, callback);
+            });
+        }
 };
 
 return e;
