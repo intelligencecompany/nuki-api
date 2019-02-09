@@ -442,7 +442,7 @@ var e = module.exports = {
                     headers: {
                         'User-Agent': 'none',
                         'Accept': 'application/json',
-                        'Authorization': 'Bearer ' + self.apiKey
+                        'Authorization': 'Bearer ' + e.apiKey
                     },
 					body: '{"action": ' + action + '}'
                 };
