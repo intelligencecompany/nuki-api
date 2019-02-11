@@ -1,15 +1,32 @@
 {
-  "name": "nuki-api",
-  "version": "0.0.7",
-  "description": "NUKI WEB API",
+  "name": "nuki-web-api",
+  "version": "1.0.0",
+  "description": "Nuki Web API",
+  "author": {
+    "name": "intelligence company",
+    "email": "gijs@intelligencecompany.net"
+  },
+  "contributors": [
+    {
+      "name": "intelligence company",
+      "email": "gijs@intelligencecompany.net"
+    }
+    {
+      "name": "Zefau",
+      "email": "zefau@mailbox.org"
+    }
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "gijs",
   "license": "MIT",
   "keywords": ["nuki", "api", "smartlock", "intelligence company"],
   "dependencies": {
     "request":">=2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/intelligencecompany/nuki-api"
   }
 }
