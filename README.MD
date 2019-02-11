@@ -2,22 +2,30 @@
 
 This package can be used with the NUKI Smartlock Web Api - https://api.nuki.io
 
+```
 npm install nuki-api
+```
+
 
 ## Code Example
 ``` js
-var nuki = require('nuki-api')
+let nuki = require('nuki-api'),
+    instance = new nuki();
 
-nuki.apiKey = 'xxxxxxxxxxxxxxxxxxxxx'
+instance.apiKey = 'xxxxxxxxxxxxxxxxxxxxx'
 
-nuki.getSmartLocks(true).then(function (smartlocks) {
-    console.log(smartlogs);
+instance.getSmartLocks(true).then(function (smartlocks) {
+    console.log(smartlocks);
 });
 ```
 
+
 ## Motivation
 
-This package was build to integrate the NUKI Smartlock with AirBnB, Booking.com, HomeAway and other internet calendars.
+This package was initially build to integrate the NUKI Smartlock with AirBnB, Booking.com, HomeAway and other internet calendars. Other relevant and compatible packages are:
+1. [ical-booking](https://www.npmjs.com/package/ical-booking) 
+2. [nuki-ical](https://www.npmjs.com/package/nuki-ical) (under construction) 
+
 
 ## API Reference
 
@@ -43,10 +51,31 @@ updateAccess                | (int) smartlockId, (int) authId, (models.Smartlock
 revokeAccess                | (int) smartlockId, (int) authId
 getLog                      | (int) smartlockId (optional)
 
+
 ## Contributors
 
 If you want to contribute or donate to the project, please contact me on gijs@intelligencecompany.net.
 
-## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+## License
+MIT License
+
+Copyright (c) 2017 intelligencecompany
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
