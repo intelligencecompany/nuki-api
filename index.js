@@ -408,10 +408,12 @@ var e = module.exports = {
             request(options, callback);
         });
     },
-    getLog: function (smartlockId = null) {
+    getLog: function (smartlockId = null, parameters = {}) { // parameters: accountUserId (integer), fromDate (string), toDate (string), action (integer), id (integer), limit (integer)
+	let params = Object.keys(parameters);
         return new Promise(function (resolve, reject) {
-            var url = smartlockId != null ? "https://api.nuki.io/smartlock/log" : "https://api.nuki.io/smartlock/" + smartlockId + "log";
-
+            var url = smartlockId == null ? "https://api.nuki.io/smartlock/log" : "https://api.nuki.io/smartlock/" + smartlockId + "/log";
+		url = params.length ? url + '?' + params.map(function(key) {return key + '=' + parameters[key]}) : url;
+			
             var options = {
                 url: url,
                 method: "GET",
